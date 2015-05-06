@@ -1,5 +1,5 @@
 # Build MonoDevelop on OS X
 
 ```shell
-curl -L ... | ruby
+$ curl -L bit.ly/1zCQCam | ruby
 ```
