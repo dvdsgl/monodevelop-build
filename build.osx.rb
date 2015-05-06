@@ -47,11 +47,11 @@ end
 
 def make
   system 'make'
-  system 'cd main/build/MacOSX && make MonoDevelop.app'
+  system 'cd main/build/MacOSX && make'
 end
 
 def run
-  system "open main/build/MacOSX/MonoDevelop.app"
+  system "./main/build/MacOSX/MonoDevelop.app/Contents/MacOS/MonoDevelop MonoDevelop.mdw "
 end
 
 install_pkg MDK_URL unless installed? MDK_PKG_ID
