@@ -2,7 +2,7 @@
 
 require "fileutils"
 
-MONODEVELOP_REPO = "git@github.com:mono/monodevelop.git"
+MONODEVELOP_REPO = "https://github.com/mono/monodevelop.git"
 
 # Building MonoDevelop on OS X requires an older version of Xamarin.Mac.
 # This isn't documented anywhere!
