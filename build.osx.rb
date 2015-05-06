@@ -41,6 +41,10 @@ def clone
   end
 end
 
+def configure
+  system "./configure --profile=mac"
+end
+
 def make
   system 'make'
   system 'cd main/build/MacOSX && make MonoDevelop.app'
@@ -58,5 +62,6 @@ clone
 system 'export PATH="/Library/Frameworks/Mono.framework/Versions/Current/bin:$PATH"'
 system 'export ACLOCAL_FLAGS="-I /Library/Frameworks/Mono.framework/Versions/Current/share/aclocal"'
 system 'export DYLD_FALLBACK_LIBRARY_PATH=/Library/Frameworks/Mono.framework/Versions/Current/lib:/lib:/usr/lib'
+configure
 make
 run
