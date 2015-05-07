@@ -116,6 +116,6 @@ ENV['PATH'] = "/Library/Frameworks/Mono.framework/Versions/Current/bin:#{ENV['PA
 ENV['ACLOCAL_FLAGS'] = "-I /Library/Frameworks/Mono.framework/Versions/Current/share/aclocal"
 ENV['DYLD_FALLBACK_LIBRARY_PATH'] = "/Library/Frameworks/Mono.framework/Versions/Current/lib:/lib:/usr/lib"
 
-configure
+configure unless File.exist? "config.make"
 make
 run
