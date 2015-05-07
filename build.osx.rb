@@ -64,7 +64,7 @@ def make
 end
 
 def run
-  system "./main/build/MacOSX/MonoDevelop.app/Contents/MacOS/MonoDevelop MonoDevelop.mdw "
+  system "./main/build/MacOSX/MonoDevelop.app/Contents/MacOS/MonoDevelop MonoDevelop.mdw"
 end
 
 def xcode_tools_installed?
