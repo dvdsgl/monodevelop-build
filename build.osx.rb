@@ -15,7 +15,8 @@ MDK_URL = "http://download.mono-project.com/archive/4.0.0/macos-10-x86/#{MDK_PKG
 
 def which bin
   begin
-    `which #{bin}`
+    path = `which #{bin}`
+    return path if $?.exitstatus.zero?
   rescue
     nil
   end
