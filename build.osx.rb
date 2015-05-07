@@ -77,6 +77,24 @@ def wait_until_xcode_tools_installer_finishes
   wait_until_xcode_tools_installer_finishes
 end
 
+def explain
+  system "clear"
+  puts "This script performs the following steps when necessary:"
+  puts " "
+  puts "  * Installs Xcode command line tools"
+  puts "  * Installs Homebrew package manager"
+  puts "  * Installs autoconf and automake"
+  puts "  * Installs Xamarin.Mac and Mono development kit"
+  puts "  * Clones the mono/monodevelop repo"
+  puts "  * Configures and builds monodevelop, including the OS X app bundle"
+  puts "  * Opens the main MonoDevelop workspace in itself"
+  puts ""
+  puts "Please watch for password prompts. Press return to start."
+  while gets != "\n"; end
+end
+
+explain
+
 until xcode_tools_installed?
   system "xcode-select --install &>/dev/null"
   puts "Waiting for Xcode command line tools to finish installing..."
