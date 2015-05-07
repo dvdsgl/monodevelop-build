@@ -67,6 +67,15 @@ def run
   system "./main/build/MacOSX/MonoDevelop.app/Contents/MacOS/MonoDevelop MonoDevelop.mdw "
 end
 
+def xcode_tools_installed?
+  !system("xcode-select --install &>/dev/null")
+end
+
+unless xcode_tools_installed?
+  puts "Please finish installing Xcode command line tools, then press return to continue."
+  while gets != "\n"; end
+end
+
 # Install and use Homebrew to get esoteric build dependencies
 install_brew unless which "brew"
 system "brew install autoconf" unless which "autoconf"
