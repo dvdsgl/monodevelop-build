@@ -1,7 +1,7 @@
 The goal of this repo is to make building MonoDevelop on a fresh OS X install as easy as:
 
 ```shell
-$ ruby -e "$(curl -fsSL bit.ly/1zCQCam)"
+ruby -e "$(curl -fsSL bit.ly/1zCQCam)"
 ```
 
 Please watch for password prompts.
