@@ -47,7 +47,7 @@ end
 def clone
   Dir.chdir "monodevelop" if File.directory? "monodevelop"
   unless inside_monodevelop_clone?
-    system "git clone #{MONODEVELOP_REPO}"
+    system "git clone --depth=1 #{MONODEVELOP_REPO}"
     Dir.chdir "monodevelop"
     system "git submodule update --init --recursive"
   end
