@@ -79,7 +79,7 @@ end
 
 def explain
   system "clear"
-  puts "This script performs the following steps when necessary:"
+  puts "This script performs the following steps when needed:"
   puts " "
   puts "  * Installs Xcode command line tools"
   puts "  * Installs Homebrew package manager"
