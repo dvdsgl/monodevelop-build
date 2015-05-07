@@ -72,7 +72,7 @@ def xcode_tools_installed?
 end
 
 def wait_until_xcode_tools_installer_finishes
-  sleep 3
+  sleep 1
   return unless system 'pgrep "Install Command Line Developer Tools" &>/dev/null'
   wait_until_xcode_tools_installer_finishes
 end
