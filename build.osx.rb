@@ -13,6 +13,18 @@ MDK_PKG_ID = "com.xamarin.mono-MDK.pkg"
 MDK_PKG = "MonoFramework-MDK-4.0.0.macos10.xamarin.x86.pkg"
 MDK_URL = "http://download.mono-project.com/archive/4.0.0/macos-10-x86/#{MDK_PKG}"
 
+def which bin
+  begin
+    `which #{bin}`
+  rescue
+    nil
+  end
+end
+
+def install_brew
+  system 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+end
+
 def installed? pkg
   system "pkgutil --pkgs=#{pkg} &>/dev/null"
 end
@@ -54,6 +66,12 @@ def run
   system "./main/build/MacOSX/MonoDevelop.app/Contents/MacOS/MonoDevelop MonoDevelop.mdw "
 end
 
+# Install and use Homebrew to get esoteric build dependencies
+install_brew unless which "brew"
+system "brew install autoconf" unless which "autoconf"
+system "brew install automake" unless which "automake"
+
+# Get Mono and Xamarin.Mac
 install_pkg MDK_URL unless installed? MDK_PKG_ID
 install_pkg XAMARIN_MAC_URL unless installed? XAMARIN_MAC_PKG
 
