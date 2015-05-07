@@ -73,13 +73,13 @@ end
 
 def wait_until_xcode_tools_installer_finishes
   sleep 3
-  return unless system 'pgrep "Install Command Line Developer Tools"'
+  return unless system 'pgrep "Install Command Line Developer Tools" &>/dev/null'
   wait_until_xcode_tools_installer_finishes
 end
 
 until xcode_tools_installed?
   system "xcode-select --install &>/dev/null"
-  puts "Please finish installing Xcode command line tools."
+  puts "Waiting for Xcode command line tools to finish installing..."
 
   sleep 10
   wait_until_xcode_tools_installer_finishes
