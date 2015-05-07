@@ -99,7 +99,7 @@ until xcode_tools_installed?
   system "xcode-select --install &>/dev/null"
   puts "Waiting for Xcode command line tools to finish installing..."
 
-  sleep 10
+  sleep 4
   wait_until_xcode_tools_installer_finishes
 end
 
