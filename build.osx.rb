@@ -68,12 +68,21 @@ def run
 end
 
 def xcode_tools_installed?
-  !system("xcode-select --install &>/dev/null")
+  system "xcode-select -p &>/dev/null"
+end
+
+def wait_until_xcode_tools_installer_finishes
+  sleep 3
+  return unless system 'pgrep "Install Command Line Developer Tools"'
+  wait_until_xcode_tools_installer_finishes
 end
 
 unless xcode_tools_installed?
-  puts "Please finish installing Xcode command line tools, then press return to continue."
-  while gets != "\n"; end
+  system "xcode-select --install &>/dev/null"
+  puts "Please finish installing Xcode command line tools."
+
+  sleep 10
+  wait_until_xcode_tools_installer_finishes
 end
 
 # Install and use Homebrew to get esoteric build dependencies
