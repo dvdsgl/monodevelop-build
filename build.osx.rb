@@ -23,7 +23,7 @@ def which bin
 end
 
 def install_brew
-  system 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+  system 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &>/dev/null'
 end
 
 def installed? pkg
