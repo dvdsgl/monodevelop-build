@@ -77,7 +77,7 @@ def wait_until_xcode_tools_installer_finishes
   wait_until_xcode_tools_installer_finishes
 end
 
-unless xcode_tools_installed?
+until xcode_tools_installed?
   system "xcode-select --install &>/dev/null"
   puts "Please finish installing Xcode command line tools."
 
