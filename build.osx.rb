@@ -6,11 +6,11 @@ MONODEVELOP_REPO = "https://github.com/mono/monodevelop.git"
 
 # Building MonoDevelop on OS X requires an older version of Xamarin.Mac.
 # This isn't documented anywhere!
-XAMARIN_MAC_PKG = "xamarin.mac-1.12.0.14.pkg"
+XAMARIN_MAC_PKG = "xamarin.mac-2.0.2.17.pkg"
 XAMARIN_MAC_URL = "http://download.xamarin.com/XamarinforMac/Mac/#{XAMARIN_MAC_PKG}"
 
 MDK_PKG_ID = "com.xamarin.mono-MDK.pkg"
-MDK_PKG = "MonoFramework-MDK-4.0.0.macos10.xamarin.x86.pkg"
+MDK_PKG = "MonoFramework-MDK-4.0.2.4.macos10.xamarin.x86.pkg"
 MDK_URL = "http://download.mono-project.com/archive/4.0.0/macos-10-x86/#{MDK_PKG}"
 
 def which bin
